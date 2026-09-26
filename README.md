@@ -27,15 +27,22 @@ npm run dev                 # http://localhost:3000
 
 Sign in at `/login`. Demo accounts (password for all: `password123`):
 
-| Role | Email |
-|---|---|
-| Student | riya.student@college.edu |
-| Student | arjun.student@college.edu |
-| Agent — Fees | meera.agent@college.edu |
-| Agent — ID Cards | kabir.agent@college.edu |
-| Agent — Attendance/Certificates | zara.agent@college.edu |
-| Manager | manager@college.edu |
-| Admin | admin@college.edu |
+| Role | Email | Can edit/resolve tickets? |
+|---|---|---|
+| **Teacher (host)** | teacher@college.edu | **Yes — full access, every ticket** |
+| Student | riya.student@college.edu | No — raise, view own, comment, reopen only |
+| Student | arjun.student@college.edu | No — raise, view own, comment, reopen only |
+| Agent — Fees | meera.agent@college.edu | Yes — own department only |
+| Agent — ID Cards | kabir.agent@college.edu | Yes — own department only |
+| Agent — Attendance/Certificates | zara.agent@college.edu | Yes — own department only |
+| Manager | manager@college.edu | Yes — full access, every ticket |
+
+The **Teacher** account (`role: ADMIN` internally) is the one meant for a single
+host/instructor running the whole desk: it sees every department, can resolve,
+reassign, escalate, or change priority on any ticket, and is the only role with
+the management dashboard alongside Manager. Student accounts are intentionally
+read/create-only — see "Ticket lifecycle" below for exactly what they can and
+can't do.
 
 ## Feature walkthrough
 

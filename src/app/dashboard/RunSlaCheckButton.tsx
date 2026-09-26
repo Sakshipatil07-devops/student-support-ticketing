@@ -25,11 +25,11 @@ export function RunSlaCheckButton() {
       <button
         onClick={run}
         disabled={pending}
-        className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 disabled:opacity-60"
+        className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 disabled:opacity-60 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800"
       >
         {pending ? "Refreshing…" : "Run SLA check now"}
       </button>
-      {message && <span className="text-xs text-gray-500">{message}</span>}
+      {message && <span className="text-xs text-gray-500 dark:text-gray-400">{message}</span>}
     </div>
   );
 }

@@ -1,8 +1,38 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: toggled by <html class="dark">, set in ThemeScript. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #f4f5f7;
   --foreground: #111827;
+
+  /* Dashboard chart tokens — light values (see dataviz palette). */
+  --chart-good: #0ca30c;
+  --chart-warning: #fab219;
+  --chart-serious: #ec835a;
+  --chart-critical: #d03b3b;
+  --chart-blue: #2a78d6;
+  --chart-aqua: #1baf7a;
+  --chart-muted: #898781;
+  --chart-track: #e1e0d9;
+  --chart-ink: #0b0b0b;
+}
+
+.dark {
+  --background: #0a0e0d;
+  --foreground: #e7ebe8;
+
+  /* Dark surface: same hue family, stepped for contrast on a dark ground. */
+  --chart-good: #22c55e;
+  --chart-warning: #f5b942;
+  --chart-serious: #f0966e;
+  --chart-critical: #ef5757;
+  --chart-blue: #4c93e8;
+  --chart-aqua: #2fcf95;
+  --chart-muted: #9aa39b;
+  --chart-track: #262c27;
+  --chart-ink: #ffffff;
 }
 
 @theme inline {

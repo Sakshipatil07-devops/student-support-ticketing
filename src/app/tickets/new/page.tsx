@@ -10,14 +10,17 @@ export default async function NewTicketPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-2xl font-semibold text-gray-900">Raise a Support Ticket</h1>
-      <p className="mt-1 text-sm text-gray-500">
+      <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Raise a Support Ticket</h1>
+      <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
         Describe your issue and pick the closest category — your ticket is routed to the right team automatically.
       </p>
 
-      <form action={createTicketAction} className="mt-6 space-y-5 rounded-lg border border-gray-200 bg-white p-6">
+      <form
+        action={createTicketAction}
+        className="mt-6 space-y-5 rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900"
+      >
         <div>
-          <label className="block text-sm font-medium text-gray-700">Category</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
           <select name="category" required defaultValue="" className={inputClass}>
             <option value="" disabled>
               Select a category
@@ -31,7 +34,7 @@ export default async function NewTicketPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">Priority</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Priority</label>
           <select name="priority" defaultValue={Priority.MEDIUM} className={inputClass}>
             {Object.values(Priority).map((p) => (
               <option key={p} value={p}>
@@ -39,13 +42,13 @@ export default async function NewTicketPage() {
               </option>
             ))}
           </select>
-          <p className="mt-1 text-xs text-gray-500">
+          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
             Choose Urgent only for exam-blocking or time-critical issues — misuse delays genuinely urgent requests.
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">Subject</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
           <input
             type="text"
             name="subject"
@@ -57,7 +60,7 @@ export default async function NewTicketPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">Description</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
           <textarea
             name="description"
             required
@@ -69,7 +72,7 @@ export default async function NewTicketPage() {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+          className="w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
         >
           Submit Ticket
         </button>
@@ -79,4 +82,4 @@ export default async function NewTicketPage() {
 }
 
 const inputClass =
-  "mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500";
+  "mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100 dark:placeholder-gray-500";

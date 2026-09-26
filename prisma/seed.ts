@@ -24,7 +24,7 @@ async function main() {
   }
 
   console.log("Seeding users...");
-  const [riya, arjun, meera, kabir, zara, manager, admin] = await Promise.all([
+  const [riya, arjun, meera, kabir, zara, manager, teacher] = await Promise.all([
     prisma.user.upsert({
       where: { email: "riya.student@college.edu" },
       update: {},
@@ -92,11 +92,11 @@ async function main() {
       },
     }),
     prisma.user.upsert({
-      where: { email: "admin@college.edu" },
+      where: { email: "teacher@college.edu" },
       update: {},
       create: {
-        name: "System Administrator",
-        email: "admin@college.edu",
+        name: "Teacher",
+        email: "teacher@college.edu",
         passwordHash,
         role: Role.ADMIN,
       },
